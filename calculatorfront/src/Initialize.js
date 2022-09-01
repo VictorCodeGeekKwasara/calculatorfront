@@ -1,4 +1,6 @@
 import React from 'react';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 import { getProvider } from './utils/getProvider';
 import idl from './idl.json';
 import { PublicKey } from '@solana/web3.js';
@@ -8,6 +10,17 @@ const { SystemProgram} = web3;
 const programID = new PublicKey(idl.metadata.address);
 
 const Initialize = ({init,calculator}) => {
+
+const styles = {
+	box: {
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		justifyContent: 'center',
+		height: '100vh',
+		width: '100vw',
+	},
+};
 const createAccount = async () => {
 	try {
 		const provider = getProvider();
@@ -29,7 +42,13 @@ const createAccount = async () => {
 		console.log(err);
 	}
 };
-	return <button onClick={createAccount}>Initialize</button>;
+	return (
+		<Box sx={styles.box}>
+			<Button variant='contained' onClick={createAccount}>
+				Initialize
+			</Button>
+		</Box>
+	);
 };
 
 export default Initialize;
