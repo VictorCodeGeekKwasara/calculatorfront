@@ -3,16 +3,11 @@ import { getProvider } from './utils/getProvider';
 import idl from './idl.json';
 import { PublicKey } from '@solana/web3.js';
 import { Program, web3 } from '@project-serum/anchor';
-import kp from './keypair.json';
-const { SystemProgram, Keypair } = web3;
+
+const { SystemProgram} = web3;
 const programID = new PublicKey(idl.metadata.address);
 
-const arr = Object.values(kp._keypair.secretKey);
-const secret = new Uint8Array(arr);
-const calculator = web3.Keypair.fromSecretKey(secret);
-
-
-const Initialize = ({init}) => {
+const Initialize = ({init,calculator}) => {
 const createAccount = async () => {
 	try {
 		const provider = getProvider();

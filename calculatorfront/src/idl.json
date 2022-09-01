@@ -86,6 +86,17 @@
 					"type": "i64"
 				}
 			]
+		},
+		{
+			"name": "reset",
+			"accounts": [
+				{
+					"name": "calculator",
+					"isMut": true,
+					"isSigner": false
+				}
+			],
+			"args": []
 		}
 	],
 	"accounts": [
