@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import { userConnected } from "./utils/getConnection.js";
 
 const Connect = ({ chngStatus }) => {
@@ -26,6 +27,7 @@ const Connect = ({ chngStatus }) => {
   }
 	return (
 		<Box sx={styles.box}>
+			<Typography variant='h6'>Phantom Wallet.</Typography>
 			<Button variant='contained' mr={1} onClick={updateStatus}>
 				Connect
 			</Button>
